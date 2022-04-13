@@ -25,6 +25,20 @@ h3{
     color:black;
 
   }
+  a {
+    color: #292b2c;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  a:hover {
+    color: #cfbf92;
+    text-decoration: none;
+  }
+  a:focus {
+    outline: none;
+  }
+  input:focus,
 /******************** LOGIN & REGISTER ************************/
 .login_wrap {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -37,6 +51,7 @@ h3{
   -ms-flex-align: center;
   align-items: center;
   position: relative;
+  padding: 60px;
 }
 .login_footer {
   margin-bottom: 20px;
@@ -212,9 +227,66 @@ h3{
 	margin-bottom: 20px;
 }
 .form-group{
-  margin: 10px;
+  margin: 5px;
+  padding:10px;
 }
 
+/******************** BREADCRUMB ************************/
+.breadcrumb_section {
+	padding: 150px 0;
+	width: 100%;
+}
+.breadcrumb_section.page-title-mini {
+	padding: 70px 0;
+}
+.page-title-mini .page-title h1 {
+	font-size: 28px;
+}
+.page-title-mini .breadcrumb li {
+	font-size: 14px;
+}
+.header_wrap.transparent_header  + .breadcrumb_section {
+	padding-top: 200px;
+}
+.header_wrap.transparent_header.header_with_topbar + .breadcrumb_section {
+	padding-top: 250px;
+}
+.page-title h1 {
+	margin: 0;
+	text-transform: capitalize;
+	font-weight: bold;
+	line-height: normal;
+}
+.page_title_light *, .page_title_light .breadcrumb-item, .page_title_light .breadcrumb-item::before {
+	color: #fff;
+}
+.breadcrumb {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	content: "\f3d1";
+	font-family: "Ionicons";
+	vertical-align: middle;
+}
+.page-title + .breadcrumb {
+	margin-top: 15px;
+}
+.page-title + span {
+	margin-top: 15px;
+	display: inline-block;
+	width: 100%;
+}
+
+.breadcrumb-item a i {
+	font-size: 26px;
+	line-height: 1;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-top: -5px;
+	display: inline-block;
+}
 
 
 
