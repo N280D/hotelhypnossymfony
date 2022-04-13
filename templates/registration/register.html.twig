@@ -1,23 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
 
-    <h1>S'inscrire</h1>
-        
-        {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.ConditionsGenerales) }}
+{{include("partials/title_section.html.twig",{'nom':'Inscription'})}}
+<div class="login_register_wrap section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-md-10">
+                <div class="login_wrap">
+            		<div class="padding_eight_all bg-white">
+                        <div class="heading_s1">
+                            <h3>Créer un compte</h3>
+                        </div>
+                         {{ form_start(registrationForm) }} 
+                             <div class="message-flash">
+                            {% for flash_error in app.flashes('verify_email_error') %}
+                                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                             {% endfor %}
+                        </div>
+                        <form method="post">
+                            <div class="form-group">
+                                {{ form_row(registrationForm.nom) }}
+                            </div>
+                            <div class="form-group">
+                                
+                                {{ form_row(registrationForm.prenom) }}
+                            </div> 
+                            <div class="form-group">
+                                {{ form_row(registrationForm.email) }}
+                            </div>   
+                            <div class="form-group">
+                                 {{ form_row(registrationForm.plainPassword) }}
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" required="" type="password" name="Mot de passe" placeholder="Confirmer le mot de passe">
+                            </div>
+                            <div class="login_footer form-group">
+                                <div class="chek-form">
+                                    <div class="custome-checkbox">
+                                    {{ form_row(registrationForm.ConditionsGenerales) }}  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-fill-out btn-block" name="register">Enregistrer</button>
+                            </div>
+                        {{ form_end(registrationForm) }}
+                        <div class="different_login">
+                            <span>ou</span>
+                        </div>
+                        <ul class="btn-login list_none text-center">
+                            <li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
+                            <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
+                        </ul>
+                        <div class="form-note text-center">Vous avez déja un compte? <a href="login.html">S'identifier</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    </div>
 
-        <button type="submit" class="btn">Enregistrer</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
+</div>
+<!--  -->
+     
+    {% endblock %}
