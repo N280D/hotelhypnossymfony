@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}
+ <link rel="stylesheet" href="assets/css/style.css">
 
+{% endblock %}
+ 
 {% block body %}
 
 {{include("partials/title_section.html.twig",{'nom':'Inscription'})}}
