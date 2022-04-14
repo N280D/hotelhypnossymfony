@@ -4,7 +4,7 @@
 
 {% block body %}
 
-{{include("partials/title_section.html.twig",{'nom':'Inscription'})}}
+{{include("partials/title_section.html.twig",{'nom':'Mon compte'})}}
 <div class="login_register_wrap section">
     <div class="container">
         <div class="row justify-content-center">
@@ -52,7 +52,7 @@
                             <li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
                             <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
                         </ul>
-                        <div class="form-note text-center">Vous avez déja un compte? <a href="login.html">S'identifier</a></div>
+                        <div class="form-note text-center">Vous avez déja un compte? <a href="{{path('app_login')}}">S'identifier</a></div>
                     </div>
                 </div>
             </div>
