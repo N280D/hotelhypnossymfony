@@ -19,7 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="{{path('app_register')}}">
+                {% if app.user%}
+                <li class="nav-item">
+                <a class="nav-link" href="{{path('app_logout')}}">
+                 Se déconnecter
+                 </a>
+                {% else %}
+                 <a class="nav-link" href="{{path('app_register')}}">
                 S'inscrire
                 </a>
                  </li>
@@ -27,6 +33,8 @@
                 <a class="nav-link" href="{{path('app_login')}}">
                 Se connecter
                  </a>
+                {% endif %}
+               
                  </li>
                 </ul>
             </div>
