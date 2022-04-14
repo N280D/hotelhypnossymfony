@@ -16,7 +16,7 @@
                             <form method="post">
                              {% if app.user %}
                                     <div class="mb-3">
-                                        Vous êtes authentifier sous {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se deconnecter</a>
+                                        Vous êtes authentifier sous {{ app.user.Prenom}}, <a href="{{ path('app_logout') }}">Se deconnecter</a>
                                     </div>
                                 {% endif %}
 
@@ -49,7 +49,7 @@
                                  <input type="hidden" name="_csrf_token"
                                         value="{{ csrf_token('authenticate') }}"
                                     >
-                                <div class="form-group"> 
+                                <divclass="form-group"> 
                                 <button type="submit" class="btn btn-fill-out btn-lock" name="connection">Se connecter</button>
                                 </div>    
                             </form>
