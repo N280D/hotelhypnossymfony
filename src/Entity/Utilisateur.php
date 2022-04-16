@@ -37,7 +37,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: reservations::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Reservations::class, orphanRemoval: true)]
     private $relation;
 
     public function __construct()
@@ -152,14 +152,14 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, reservations>
+     * @return Collection<int, Reservations>
      */
     public function getRelation(): Collection
     {
         return $this->relation;
     }
 
-    public function addRelation(reservations $relation): self
+    public function addRelation(Reservations $relation): self
     {
         if (!$this->relation->contains($relation)) {
             $this->relation[] = $relation;

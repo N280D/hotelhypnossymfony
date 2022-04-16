@@ -24,6 +24,10 @@
                 <a class="nav-link" href="{{path('app_logout')}}">
                  Se déconnecter
                  </a>
+                 <li class="nav-item">
+                <a class="nav-link" href="{{path('reservations')}}">
+                Réserver
+                 </a>
                 {% else %}
                  <a class="nav-link" href="{{path('app_register')}}">
                 S'inscrire
@@ -33,6 +37,7 @@
                 <a class="nav-link" href="{{path('app_login')}}">
                 Se connecter
                  </a>
+                  
                 {% endif %}
                
                  </li>
