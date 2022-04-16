@@ -3,11 +3,12 @@
 {% block title %}Page d'Accueuil{% endblock %}
 
 {% block body %}
-
-
+ 
 <div class="container">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-   
+    {% for etablissement in etablissement %}
+    {{include("partials/etablissement.html.twig",{'etablissement':etablissement})}}
+  {% endfor %}
 </div>
+
+
 {% endblock %}

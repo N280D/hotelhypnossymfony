@@ -13,9 +13,10 @@ class HomeController extends AbstractController
     public function index(EtablissementRepository $repoEtablissement): Response
     {
         $etablissement=$repoEtablissement->findAll();
-        dd($etablissement);
+        //dd($etablissement);
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'etablissement'=>$etablissement,
         ]);
     }
 }
