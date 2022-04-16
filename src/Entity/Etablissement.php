@@ -122,7 +122,7 @@ class Etablissement
     }
     public function __toString()
     {
-        return $this->name;
+        return $this->nom;
     }
 
     public function getImage(): ?string

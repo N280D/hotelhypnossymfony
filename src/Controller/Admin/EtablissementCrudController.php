@@ -27,8 +27,9 @@ class EtablissementCrudController extends AbstractCrudController
             TextEditorField::new('adresse'),
             TextEditorField::new('ville'),
             //AssociationField::new('Suite'),
-            ImageField::new('image')->setBasePath('/assets/uploads/etablissement')
+            ImageField::new('image')->setBasePath('/assets/uploads/etablissements')
                                     ->setUploadDir('/public/assets/uploads/etablissements/')
         ];
   }
+
 }
