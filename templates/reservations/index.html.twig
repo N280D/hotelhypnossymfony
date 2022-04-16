@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de réservation{% endblock %}
+
+{% block body %}
+
+     {% if app.user%}
+          {{form(form)}}     
+    {% else %}
+
+{% endblock %}

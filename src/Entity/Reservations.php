@@ -25,7 +25,7 @@ class Reservations
     #[ORM\Column(type: 'binary')]
     private $confirme;
 
-    #[ORM\OneToOne(targetEntity: suite::class, cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(targetEntity: Suite::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private $relation;
 
@@ -89,12 +89,12 @@ class Reservations
         return $this;
     }
 
-    public function getRelation(): ?suite
+    public function getRelation(): ?Suite
     {
         return $this->relation;
     }
 
-    public function setRelation(suite $relation): self
+    public function setRelation(Suite $relation): self
     {
         $this->relation = $relation;
 
@@ -123,5 +123,10 @@ class Reservations
         $this->Nbjour = $Nbjour;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->id;
     }
 }

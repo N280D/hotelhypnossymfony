@@ -1,13 +1,17 @@
 <div class="container">
   <div class="col-sm-6">
+    <div class="align-center">Choississez un établissement hypnos</div>
     <div class="card text-center" style="margin:10px;">
       <div class="card-body" style="width: 18rem margin:20px;">
             <h6 class="card-title"><a href="">{{etablissement.nom}}</a></h6>
             <img src="assets/uploads/etablissements/{{etablissement.image}}" alt="etablissement_img1" class="card-img-top" alt="...">
             <p class="card-text">
             {{etablissement.description}}</p>
-            <a href="#" class="btn btn-secondary">Valider</a>
+            <a href="{{path('etablissementurl', {'id': etablissement.id})}}" class="btn btn-secondary">Choisir</a>
+     
         </div>
+
+        
     </div>
   </div>
 </div>   

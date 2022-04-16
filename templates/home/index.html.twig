@@ -5,6 +5,7 @@
 {% block body %}
  
 <div class="container">
+    
     {% for etablissement in etablissement %}
     {{include("partials/etablissement.html.twig",{'etablissement':etablissement})}}
   {% endfor %}
