@@ -27,8 +27,11 @@ class Etablissement
     #[ORM\Column(type: 'text')]
     private $description;
 
-    #[ORM\OneToMany(mappedBy: 'etablissement', targetEntity: suite::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'etablissement', targetEntity: Suite::class, orphanRemoval: true)]
     private $relation;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $image;
 
     public function __construct()
     {
@@ -89,14 +92,14 @@ class Etablissement
     }
 
     /**
-     * @return Collection<int, suite>
+     * @return Collection<int, Suite>
      */
     public function getRelation(): Collection
     {
         return $this->relation;
     }
 
-    public function addRelation(suite $relation): self
+    public function addRelation(Suite $relation): self
     {
         if (!$this->relation->contains($relation)) {
             $this->relation[] = $relation;
@@ -106,7 +109,7 @@ class Etablissement
         return $this;
     }
 
-    public function removeRelation(suite $relation): self
+    public function removeRelation(Suite $relation): self
     {
         if ($this->relation->removeElement($relation)) {
             // set the owning side to null (unless already changed)
@@ -120,5 +123,17 @@ class Etablissement
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 }

@@ -26,8 +26,11 @@ class SuiteCrudController extends AbstractCrudController
             TextField::new('titre'),
             TextEditorField::new('description'),
             MoneyField::new('prix')->setCurrency('EUR'),
-            ImageField::new('image')->setBasePath('/assets/uploads/products/'),
             AssociationField::new('etablissement'),
+            ImageField::new('image1')->setBasePath('/assets/uploads/suites/')
+                                    ->setUploadDir('/public/assets/uploads/suites/'),
+            ImageField::new('image2')->setBasePath('/assets/uploads/suites/')
+                                    ->setUploadDir('/public/assets/uploads/suites/')                         
         ];
     }
     
