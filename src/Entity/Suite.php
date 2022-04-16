@@ -37,6 +37,9 @@ class Suite
     #[ORM\OneToMany(mappedBy: 'relation', targetEntity: Planning::class)]
     private $plannings;
 
+    #[ORM\Column(type: 'integer')]
+    private $quantite;
+
     public function __construct()
     {
         $this->plannings = new ArrayCollection();
@@ -153,4 +156,6 @@ class Suite
     {
         return $this->titre;
     }
+
+    
 }

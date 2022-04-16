@@ -33,6 +33,9 @@ class Reservations
     #[ORM\JoinColumn(nullable: false)]
     private $utilisateur;
 
+    #[ORM\Column(type: 'integer')]
+    private $Nbjour;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +109,18 @@ class Reservations
     public function setUtilisateur(?Utilisateur $utilisateur): self
     {
         $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getNbjour(): ?int
+    {
+        return $this->Nbjour;
+    }
+
+    public function setNbjour(int $Nbjour): self
+    {
+        $this->Nbjour = $Nbjour;
 
         return $this;
     }
