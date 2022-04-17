@@ -3,9 +3,10 @@
 {% block title %}Page d'Accueuil{% endblock %}
 
 {% block body %}
- 
-<div class="container">
-    
+   <div class="align-center">Choississez un établissement hypnos</div>
+   
+   <div class="container">
+  
     {% for etablissement in etablissement %}
     {{include("partials/etablissement.html.twig",{'etablissement':etablissement})}}
   {% endfor %}

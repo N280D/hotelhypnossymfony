@@ -1,11 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@600;700&family=Kameron&display=swap');
+
+
 html, body {
+  
+  font-family: 'Kameron', serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  
 }
-h3{
+h1, h2,h3,h4{
+  font-family: 'Amiko', sans-serif;
   margin: 10px;
 }
 
@@ -143,7 +151,7 @@ xbox;
 .countdown_time .countdown_box {
   float: left;
   width: 25%;
-  font-family: 'Roboto';
+  font-family: 'Kameron';
   padding: 0 15px;
 }
 .countdown-wrap {
