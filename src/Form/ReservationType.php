@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Reservations;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ReservationType extends AbstractType
 {
@@ -15,8 +17,8 @@ class ReservationType extends AbstractType
             ->add('Arrivee')
             ->add('Depart')
             ->add('total')
-            ->add('confirme')
-            ->add('Nbjour')
+          
+           
             ->add('relation')
             ->add('utilisateur')
             ->add('Envoyer',SubmitType::class)
